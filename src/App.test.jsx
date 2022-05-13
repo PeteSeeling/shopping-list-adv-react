@@ -17,7 +17,6 @@ describe('Testing app behavior', () => {
         screen.getByText(/Tuna/i)
     });
 
-
     it('add one new item to the list', () => {
         render(
         <MemoryRouter>
@@ -39,7 +38,29 @@ it('should delete a list item', () => {
         <App />
         </MemoryRouter>
     );
-    
+    const tunaButton = screen.getByLabelText(/tuna-delete/i)
+    userEvent.click(tunaButton)
+ expect(screen.queryByText(/tuna/i)).not.toBeInTheDocument()
+});
+
+it('should edit a list item', () => {
+    render(
+    <MemoryRouter>
+        <App />
+        </MemoryRouter>
+    );
+
+const tunaButton = screen.getByLabelText(/tuna-edit/i)
+userEvent.click(tunaButton)
+
+const tunaField = screen.getByLabelText(/tuna-field/i)
+userEvent.type(tunaField, 'bagels')
+
+const submitChangeButton = screen.getByLabelText(/submit item change/i)
+userEvent.click(submitChangeButton)
+
+screen.findByText(/bagels/i)
+
 
 })
 })

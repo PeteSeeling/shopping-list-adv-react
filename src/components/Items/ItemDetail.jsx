@@ -14,7 +14,7 @@ export function Item({ item, onChange, onDelete }) {
 
                     <input
                         value={item.text}
-                        aria-label='input field'
+                        aria-label={`${item.text}-field`}
                         placeholder='Input'
                         onChange={(e) => {
                         onChange({
