@@ -8,7 +8,7 @@ export function Shopping(){
     return(
         <>
         <AddItemToList addItem={handleAddItem}/>
-        <ItemList items={items} onChangeItem={boughtItem} onDeleteItem={deleteItem} />
+        <ItemList items={items} changeItem={boughtItem} onDeleteItem={deleteItem} />
         
         </>
     )

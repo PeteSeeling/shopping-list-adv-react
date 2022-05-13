@@ -5,9 +5,8 @@ export default function AddItemToList({ addItem }) {
 
     const submitItem = (e) => {
         e.preventDefault()
-        addItem(text)
         setNewText('')
-
+        addItem(text)
     }
 
     return(
