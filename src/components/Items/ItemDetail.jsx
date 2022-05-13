@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 export function Item({ item, onChange, onDelete, onUpdate }) {
     const [isEditing, setIsEditing] = useState(false);
-    const input = useState()
+ 
     
     let listItem;
 
@@ -11,11 +11,13 @@ export function Item({ item, onChange, onDelete, onUpdate }) {
             <Form 
                 onSubmit={(e) =>{
                     e.preventDefault()
+
                     setIsEditing(false)
                 }}>
                     <input
                         value={item.text}
                         aria-label='input field'
+                        placeholder='Input'
                         onChange={(e) => {
                         onUpdate({
                             ...item,
@@ -31,6 +33,7 @@ export function Item({ item, onChange, onDelete, onUpdate }) {
     } else {
         listItem = (
             <>
+            <p>{item.text}</p>
             <button
             onClick={() => setIsEditing(true)}
             >Edit</button>
@@ -42,15 +45,13 @@ export function Item({ item, onChange, onDelete, onUpdate }) {
     type='checkbox'
     checked={item.done}
     onChange={(e) => {
-        onChange({
+        onUpdate({
             ...item,
-            done: e.target.checked
+            done: e.target.checked,
         })
     }}
     />
-    
-     );
-      {listItem}
+     ); {listItem}
     <button
     type='button'
     onClick={() => onDelete(item.id)}
