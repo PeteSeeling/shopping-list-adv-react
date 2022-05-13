@@ -33,6 +33,7 @@ export function Item({ item, onChange, onDelete }) {
             <>
             <p>{item.text}</p>
             <button
+            aria-label={`${item.text}-edit`}
             onClick={() => setIsEditing(true)}
             >Edit</button>
             </>
@@ -54,7 +55,7 @@ export function Item({ item, onChange, onDelete }) {
     <button
     type='button'
     onClick={() => onDelete(item.id)}
-    aria-label='delete button'
+    aria-label={`${item.text}-delete`}
     >
         Delete 
     </button>

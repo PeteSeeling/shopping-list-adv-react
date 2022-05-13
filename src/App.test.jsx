@@ -31,7 +31,15 @@ describe('Testing app behavior', () => {
         const submitButton = screen.getByText(/Add New Item/i)
         userEvent.click(submitButton)
         screen.getByText(/beans/i)
+});
 
+it('should delete a list item', () => {
+    render(
+    <MemoryRouter>
+        <App />
+        </MemoryRouter>
+    );
     
+
 })
 })
