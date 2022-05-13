@@ -20,14 +20,14 @@ function reducer(items, action) {
                 {
                     id: action.id,
                     text: action.text,
-                    done:false,
+                    done: false,
                 },
             ]
         }
         case 'bought' : {
             return items.map((item) => {
-                if(item.id === action.job.id){
-                    return action.job
+                if(item.id === action.task.id){
+                    return action.task
                 }
                 return item
             })
@@ -61,7 +61,7 @@ export const ListProvider = ({ children }) => {
     const boughtItem = (task) => {
         dispatch({
             type:'bought',
-            id: jobId
+            task,
         })
     }
 

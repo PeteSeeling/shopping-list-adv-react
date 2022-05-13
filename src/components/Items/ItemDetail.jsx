@@ -23,8 +23,8 @@ export function Item({ item, onChange, onDelete, onUpdate }) {
                         })
                         }}
                         />
-                    <button aria-label='submit item'>
-                        Add Item
+                    <button aria-label='submit item change'>
+                        Submit Item Change
                     </button>
                 </form>
         )
