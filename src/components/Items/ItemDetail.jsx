@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export function Item({ item, onChange, onDelete }) {
     const [isEditing, setIsEditing] = useState(false);

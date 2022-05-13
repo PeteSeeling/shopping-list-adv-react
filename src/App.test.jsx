@@ -15,5 +15,23 @@ describe('Testing app behavior', () => {
         screen.getByText(/Beef/i)
         screen.getByText(/Fish/i)
         screen.getByText(/Tuna/i)
-    })
+    });
+
+
+    it('add one new item to the list', () => {
+        render(
+        <MemoryRouter>
+            <App />
+            </MemoryRouter>
+        );
+
+        const itemInput = screen.getByPlaceholderText(/Add New Item Here/i);
+        userEvent.type(itemInput, 'beans');
+
+        const submitButton = screen.getByText(/Add New Item/i)
+        userEvent.click(submitButton)
+        screen.getByText(/beans/i)
+
+    
+})
 })
