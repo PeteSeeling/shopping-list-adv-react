@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export function Item({ item, onChange, onDelete, onUpdate }) {
+export function Item({ item, onChange, onDelete }) {
     const [isEditing, setIsEditing] = useState(false);
     let listItem;
 
@@ -50,7 +50,7 @@ export function Item({ item, onChange, onDelete, onUpdate }) {
         })
     }}
     />
-    ); { listItem }
+    { listItem }
     <button
     type='button'
     onClick={() => onDelete(item.id)}
