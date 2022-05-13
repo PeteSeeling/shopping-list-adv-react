@@ -1,6 +1,6 @@
 import { Item } from './ItemDetail';
 
-export function ItemList({ items, changeItem, deleteItem }){
+export default function ItemList({ items, changeItem, deleteItem }){
     return(
         <ul>
         {items.map((item) => (

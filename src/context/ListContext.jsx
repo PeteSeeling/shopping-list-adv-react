@@ -50,7 +50,7 @@ export const ListProvider = ({ children }) => {
         addToStorage(items)
     })
 
-    const addItem = (text) => {
+    const handleAddItem = (text) => {
         dispatch({
             type: 'added',
             id: items.length,
@@ -78,7 +78,7 @@ export const ListProvider = ({ children }) => {
 
     return (
         <ListContext.Provider
-        value={{ items, addItem, boughtItem, deleteItem, clearList }}
+        value={{ items, handleAddItem, boughtItem, deleteItem, clearList }}
         >
             {children}
         </ListContext.Provider>
