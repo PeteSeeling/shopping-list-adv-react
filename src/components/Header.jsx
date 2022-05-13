@@ -1,6 +1,5 @@
 import { getList } from "../context/ListContext"
 
-
 export default function Header(){
     const { clearList, items } = getList()
 

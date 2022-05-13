@@ -1,7 +1,6 @@
-
 import { createContext, useReducer, useEffect, useContext } from 'react'
 
-const cachedItems = localStorage.getItem('list')
+const cachedItems = localStorage.getItem('list');
 const initialItems = cachedItems
     ? JSON.parse(cachedItems)
     : [
@@ -10,11 +9,11 @@ const initialItems = cachedItems
         { id: 2, text: 'Tuna', done: false},
         { id: 3, text: 'Avacado', done: false},
     ]
-const addToStorage = (list) => localStorage.setItem('list', JSON.stringify(list))
 
+const addToStorage = (list) => localStorage.setItem('list', JSON.stringify(list));
 function reducer(items, action) {
     switch(action.type){
-        case 'added' :{
+        case 'added' :{ 
             return [
                 ...items,
                 {
@@ -42,39 +41,38 @@ function reducer(items, action) {
 }
 
 export const ListContext = createContext()
-
 export const ListProvider = ({ children }) => {
     const [items, dispatch ] = useReducer(reducer, initialItems)
 
     useEffect(() => {
         addToStorage(items)
-    })
+    });
 
     const handleAddItem = (text) => {
         dispatch({
             type: 'added',
             id: items.length,
             text,
-        })
-    }
+        });
+    };
 
     const boughtItem = (task) => {
         dispatch({
             type:'bought',
             task,
-        })
-    }
+        });
+    };
 
     const deleteItem = (jobId) => {
         dispatch({
             type: 'deleted',
             id: jobId,
-        })
-    }
+        });
+    };
 
     const clearList = () => {
         dispatch({ type: 'clear' })
-    }
+    };
 
     return (
         <ListContext.Provider
@@ -82,8 +80,8 @@ export const ListProvider = ({ children }) => {
         >
             {children}
         </ListContext.Provider>
-    )
-}
+    );
+};
 
 export const getList = () => {
     const context = useContext(ListContext)
@@ -92,4 +90,4 @@ export const getList = () => {
     throw new Error('Need context')
 
     return context
-}
+};

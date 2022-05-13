@@ -9,7 +9,6 @@ export function Shopping(){
         <>
         <AddItemToList addItem={handleAddItem}/>
         <ItemList items={items} changeItem={boughtItem} deleteItem={deleteItem} />
-        
         </>
     )
 }

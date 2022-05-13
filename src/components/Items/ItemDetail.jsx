@@ -28,6 +28,7 @@ export function Item({ item, onChange, onDelete }) {
                     </button>
                 </form>
         )
+
     } else {
         listItem = (
             <>
@@ -39,6 +40,7 @@ export function Item({ item, onChange, onDelete }) {
             </>
         )
     }
+
     return(
         <div>
     <input
@@ -51,6 +53,7 @@ export function Item({ item, onChange, onDelete }) {
         })
     }}
     />
+    
     { listItem }
     <button
     type='button'

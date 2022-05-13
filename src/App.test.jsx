@@ -11,7 +11,6 @@ describe('Testing app behavior', () => {
             <App />
             </MemoryRouter>
         );
-
         screen.getByText(/Beef/i)
         screen.getByText(/Fish/i)
         screen.getByText(/Tuna/i)
@@ -50,17 +49,15 @@ it('should edit a list item', () => {
         </MemoryRouter>
     );
 
-const tunaButton = screen.getByLabelText(/tuna-edit/i)
-userEvent.click(tunaButton)
+const tunaButton = screen.getByLabelText(/tuna-edit/i);
+userEvent.click(tunaButton);
 
-const tunaField = screen.getByLabelText(/tuna-field/i)
-userEvent.type(tunaField, 'bagels')
+const tunaField = screen.getByLabelText(/tuna-field/i);
+userEvent.type(tunaField, 'bagels');
 
-const submitChangeButton = screen.getByLabelText(/submit item change/i)
-userEvent.click(submitChangeButton)
+const submitChangeButton = screen.getByLabelText(/submit item change/i);
+userEvent.click(submitChangeButton);
 
-screen.findByText(/bagels/i)
-
-
+screen.findByText(/bagels/i);
 })
 })
