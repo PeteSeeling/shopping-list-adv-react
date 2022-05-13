@@ -11,5 +11,9 @@ describe('Testing app behavior', () => {
             <App />
             </MemoryRouter>
         );
+
+        screen.getByText(/Beef/i)
+        screen.getByText(/Fish/i)
+        screen.getByText(/Tuna/i)
     })
 })
