@@ -3,7 +3,7 @@ import { getList } from '../context/ListContext';
 import AddItemToList from '../components/Items/AddItem';
 
 export function Shopping(){
-    const { items, handleAddItem, boughtItem, deleteItem, clearList } = getList()
+    const { items, handleAddItem, boughtItem, deleteItem } = getList()
 
     return(
         <>
